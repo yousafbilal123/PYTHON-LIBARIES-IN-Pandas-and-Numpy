@@ -1,14 +1,8 @@
 from numpy import random
-import os
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+sns.distplot(random.normal(loc=50, scale=7, size=1000), hist=False, label='normal')
+sns.distplot(random.poisson(lam=50, size=1000), hist=False, label='poisson')
 
-x = random.normal(size=(1000,1,1000))
-x = random.normal(size=(10,1000))
-print(x)
-print("Current working directory:", os.getcwd())
-try:
-    with open('F:/1bbbbbbbbb/python pratice/numpy/random function third file/output.txt', 'w') as f:
-        f.write(str(x))
-    print("Output saved to output.txt")
-except Exception as e:
-    print(f"An error occurred: {e}")
+plt.show()
